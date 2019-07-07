@@ -8,7 +8,7 @@ import Contact from "./pages/Contact";
 import Page404 from "./pages/Page404";
 import "./index.css";
 
-const Nav = () => (
+const Navigation = () => (
   <div>
     <ul>
       <li>
@@ -26,9 +26,9 @@ const Nav = () => (
     </ul>
     <Switch>
       <Route exact path="/" component={Index} />
-      <Route exact path="/app" component={App} />
-      <Route exact path="/blog" component={Blog} />
-      <Route exact path="/contact" component={Contact} />
+      <Route path="/app" component={App} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/contact" component={Contact} />
       <Route component={Page404} />
     </Switch>
   </div>
@@ -36,7 +36,7 @@ const Nav = () => (
 
 ReactDOM.render(
   <Router>
-    <Nav />
+    <Navigation />
   </Router>,
   document.getElementById("root")
 );
