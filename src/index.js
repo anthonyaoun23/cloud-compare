@@ -6,24 +6,68 @@ import App from "./pages/App";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Page404 from "./pages/Page404";
+import "./css/style.min.css";
 import "./index.css";
 
 const Navigation = () => (
   <div>
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/app">App</Link>
-      </li>
-      <li>
-        <Link to="/blog">Blog</Link>
-      </li>
-      <li>
-        <Link to="/contact">Contact</Link>
-      </li>
-    </ul>
+    <div class="navbar navbar--extended">
+      <nav class="nav__mobile" />
+      <div class="container">
+        <div class="navbar__inner">
+          <a href="#" class="navbar__logo">
+            CloudCompare
+          </a>
+          <nav class="navbar__menu">
+            <ul>
+              <li>
+                <a>
+                  <Link to="/">Home</Link>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <Link to="/app">App</Link>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <Link to="/blog">Blog</Link>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <Link to="/contact">Contact</Link>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="navbar__menu-mob">
+            <a href="" id="toggle">
+              <svg
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  fill="currentColor"
+                  d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+                  class=""
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="page__header">
+        <div class="hero__overlay hero__overlay--gradient" />
+        <div class="hero__mask" />
+        <div class="page__header__inner" />
+      </div>
+    </div>
+
     <Switch>
       <Route exact path="/" component={Index} />
       <Route path="/app" component={App} />

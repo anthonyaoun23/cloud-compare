@@ -21,6 +21,7 @@ const App = ({ match }) => (
   </div>
 );
 
+// Actual content for page
 const AppPage = ({ match }) => (
   <div>
     App Page
