@@ -13,7 +13,7 @@ const Index = () => (
               <p class="" style={{fontSize: '1.25em', marginBottom: '40px', width: '100%'}}>
                 Match and compare cloud hosting services from leading providers in seconds
               </p>
-              <a href="#" class="button button__accent" style={{}}>Try now for free</a>
+              <a href="/app" class="button button__accent" style={{}}>Try now for free</a>
             </div>
           </div>
         </div>
