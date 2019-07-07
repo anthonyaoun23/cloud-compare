@@ -15,9 +15,8 @@ const Navigation = () => (
       <nav class="nav__mobile" />
       <div class="container">
         <div class="navbar__inner">
-          <a href="#" class="navbar__logo">
-            CloudCompare
-          </a>
+        <Link className="navbar__logo" to="/">CloudCompare</Link>
+         
           <nav class="navbar__menu">
             <ul>
               <li>

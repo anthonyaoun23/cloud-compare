@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 
 const Index = () => (
   <div>
@@ -13,7 +15,7 @@ const Index = () => (
               <p class="" style={{fontSize: '1.25em', marginBottom: '40px', width: '100%'}}>
                 Match and compare cloud hosting services from leading providers in seconds
               </p>
-              <a href="/app" class="button button__accent" style={{}}>Try now for free</a>
+              <Link className="button button__accent" to="/app">Try now for free</Link>
             </div>
           </div>
         </div>
