@@ -39,7 +39,7 @@ const Navigation = () => (
                   <Link to="/contact">Contact</Link>
                 </a>
               </li>
-            </ul>
+            </ul> 
           </nav>
           <div class="navbar__menu-mob">
             <a href="" id="toggle">

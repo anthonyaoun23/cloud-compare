@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
+// import Migrate from './Migrate';
 
 // Navigation for inner app pages
 const App = ({ match }) => (
@@ -16,7 +17,7 @@ const App = ({ match }) => (
     />
     <Route
       path={`${match.path}/migrate`}
-      component={() => <div> Fill out this survey to migrate </div>}
+      component={() => <div> Take quiz </div>}
     />
   </div>
 );

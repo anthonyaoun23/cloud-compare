@@ -670,7 +670,7 @@ select::-ms-expand {
   transition: 0.7s;
 }
 .navbar__logo {
-  font-size: 1.325rem;
+  font-size: 2rem;
   -webkit-transition: 0;
   transition: 0;
   color: #fff;
@@ -689,6 +689,7 @@ select::-ms-expand {
 }
 .navbar__menu li {
   margin-left: 4pt;
+  font-size: 1.3rem;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   display: inline-block;
@@ -741,7 +742,7 @@ select::-ms-expand {
   background-color: transparent;
 }
 .navbar--extended .navbar__inner {
-  height: 60px;
+  height: 100px;
   color: #fff;
 }
 
@@ -1316,6 +1317,7 @@ select::-ms-expand {
 .page__header {
   position: relative;
   color: #fff;
+  min-height: 100px;
   -webkit-box-shadow: 0 4px 11px rgba(124, 146, 169, 0.5);
   box-shadow: 0 4px 11px rgba(124, 146, 169, 0.5);
   width: 100%;
