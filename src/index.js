@@ -6,6 +6,7 @@ import App from "./pages/App";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Page404 from "./pages/Page404";
+import Footer from './components/Footer'
 import "./css/style.min.css";
 import "./index.css";
 
@@ -74,6 +75,8 @@ const Navigation = () => (
       <Route path="/contact" component={Contact} />
       <Route component={Page404} />
     </Switch>
+
+    <Footer />
   </div>
 );
 

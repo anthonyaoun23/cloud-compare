@@ -952,7 +952,7 @@ select::-ms-expand {
 }
 .step {
   padding: 16pt 0;
-  text-align: center;
+  text-align: left;
   width: 100%;
   border-top: 1px solid #eee;
   overflow: auto;
@@ -975,7 +975,7 @@ select::-ms-expand {
   }
 }
 .step__image {
-  max-height: 100px;
+  max-height: 200px;
   max-width: 222px;
   margin-top: 8pt;
   -webkit-user-drag: none;
@@ -1067,13 +1067,13 @@ select::-ms-expand {
   }
 }
 .expanded__image {
-  width: 90%;
-  max-width: 220px;
+  width: 100%;
+  max-width: 400px;
   padding: 16pt 0;
 }
 @media (min-width: 992px) {
   .expanded__image {
-    max-width: 280px;
+    max-width: 450px;
   }
 }
 .expanded__title {
