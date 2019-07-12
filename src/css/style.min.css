@@ -1563,4 +1563,40 @@ select::-ms-expand {
     -webkit-transition: none;
     transition: none;
   }
+
+  /*Cedric's styling for the App page! No touchy!!!!!*/
+
+  .app_page_container {
+    width: "100%";
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+
+  }
+
+  .app_page_title {
+    text-align: center;
+    font-size: 2.2em;
+    margin-top: 2em;
+  }
+
+  .app_page_ul {
+    list-style-type: none;
+  }
+
+  .app_page_li {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    font-size: 2em;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #111;
+    border-radius: 13px;
+    margin-bottom: 30px;
+
+  }
+
+
+  /*Cedric's styling for app page ends here*/
 }
