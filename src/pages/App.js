@@ -3,7 +3,7 @@ import { Route, Link } from "react-router-dom";
 import looking_learn from '../images/undraw_i_can_fly_7egl (1).svg'
 import looking_build from '../images/undraw_To_the_stars_qhyy.svg'
 import looking_migrate from '../images/undraw_server_q2pb.svg'
-// import Migrate from './Migrate';
+import Migrate from './Migrate';
 
 // Navigation for inner app pages
 const App = ({ match }) => (
@@ -20,7 +20,7 @@ const App = ({ match }) => (
     />
     <Route
       path={`${match.path}/migrate`}
-      component={() => <div> Take quiz </div>}
+      component={Migrate}
     />
   </div>
 );
