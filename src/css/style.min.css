@@ -4,11 +4,18 @@ html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   position: relative;
-  min-height: 100%;
 }
-body {
-  margin: 0 0 100px;
+html,
+body, #root {
+  margin: 0;
+
+  padding: 0;
+
+  min-width: 100vw;
+
+  min-height: 100vh;
 }
+
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -652,7 +659,7 @@ select::-ms-expand {
   transition: 0.7s;
 }
 .navbar--nofixed {
-  position: relative;
+  position: fixed;
   z-index: 3;
 }
 .navbar__inner {
@@ -742,6 +749,7 @@ select::-ms-expand {
 }
 .navbar--extended {
   background-color: transparent;
+  position: absolute;
 }
 .navbar--extended .navbar__inner {
   height: 100px;
@@ -1124,17 +1132,24 @@ select::-ms-expand {
 .cta__sub--center {
   text-align: center;
 }
+
+.bodyContainer {
+  min-width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  
+}
+
 .footer {
-  background-color: #fff;
-  padding: 36pt 0;
+  width: 100vw;
+  bottom:0;
+  padding: 32px;
 }
 
 footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 100px;
-  width: 100%;
+  position:absolute;
+  bottom:0;
+  width:100%;
 }
 .footer__inner {
   -js-display: flex;
@@ -1619,13 +1634,12 @@ footer {
 
   /*Cedric's styling for app page ends here*/
 
- /*Provider page styling*/
+  /*Provider page styling*/
 
- .provider_page_title {
-  text-align: left;
-  margin-left: 20px;
-  font-size: 2.2em;
-  margin-top: 2em;
-
- }
+  .provider_page_title {
+    text-align: left;
+    margin-left: 20px;
+    font-size: 2.2em;
+    margin-top: 2em;
+  }
 }
