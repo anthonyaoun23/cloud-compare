@@ -8,7 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Button } from '@material-ui/core';
-import ProviderPage from '../pages/ProviderPage'
+import ProviderPage from '../pages/ProviderPage';
+import ReactTooltip from 'react-tooltip';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -26,12 +27,23 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData('Speech Analytics', <Link className= "button button__accent" to={`/AWS/SpeechAnalytics`}><b>AWS Speech Analytics</b></Link>, <Link className= "button button__accent" to={`/AWS/SpeechAnalytics`}><b>Azure Speech Services</b></Link>, <Link className= "button button__accent" to={`/AWS/SpeechAnalytics`}><b>Google Cloud Speech to Text</b></Link>),
+  createData('Speech Analytics', <Link data-tip data-for='global' className= "button button__accent" to={`/AWS/SpeechAnalytics`}><b>AWS Speech Analytics</b></Link>, <Link className= "button button__accent" to={`/AWS/SpeechAnalytics`}><b>Azure Speech Services</b></Link>, <Link className= "button button__accent" to={`/AWS/SpeechAnalytics`}><b>Google Cloud Speech to Text</b></Link>),
   createData('Threat Detection', <Link className= "button button__accent" to={`/AWS/SpeechAnalytics`}><b>AWS Fraud Detection</b></Link>, <Link className= "button button__accent" to={`/AWS/SpeechAnalytics`}><b>Azure Advanced Threat Detection</b></Link>, <Link className= "button button__accent" to={`/AWS/SpeechAnalytics`}><b>Google Cloud Event Threat Detection</b></Link>),
 //   createData('Big data processing', 262, 16.0, 24),
 //   createData('Analytics and visualization', 305, 3.7, 67),
 //   createData('Database', 356, 16.0, 49),
 ];
+
+
+const ColoredLine = ({ color }) => (
+    <hr
+        style={{
+            color: 'black',
+            backgroundColor: 'black',
+            height: 1
+        }}
+    />
+);
 
 
 
@@ -40,6 +52,20 @@ export default function TableBuild() {
 
   return (
     <Paper className={classes.root}>
+            <ReactTooltip className='tooltip' id='global'>
+    <h1 className="toolTip_main_title">AWS Speech Analytics</h1>
+    <ColoredLine />
+    <div className="toolTip_title_div">
+    <h3 className='toolTip_title'>Pricing</h3>
+    </div>
+    <p className='toolTip_title'>0.3$/hr</p>
+
+    <div className="toolTip_title_div">
+    <h3 className='toolTip_title'>Learning Difficulty</h3>
+    </div>
+    <p className='toolTip_title'>Medium</p>
+    
+   </ReactTooltip>
       <Table className={classes.table}>
         <TableHead>
           <TableRow>

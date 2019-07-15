@@ -1615,11 +1615,38 @@ select::-ms-expand {
 
  /*Provider page styling*/
 
+ .tooltip {
+   margin: 0 !important;
+   padding: 0 !important;
+   opacity: 1 !important;
+   color: black !important;
+   background-color: white !important;
+   border-color: black !important;
+   border-style: solid !important;
+   border-width: 1px !important;
+   box-shadow: 1px 1px 1px black;
+ }
+
  .provider_page_title {
   text-align: left;
   margin-left: 20px;
   font-size: 2.2em;
   margin-top: 2em;
+ }
 
+ .toolTip_main_title{
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+ }
+
+ .toolTip_title {
+  margin-left: 10px;
+ }
+
+ .toolTip_title_div {
+   padding: 0;
+   margin: 0;
+   background-color: #f7f7f7;
  }
 }

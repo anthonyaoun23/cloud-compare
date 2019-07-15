@@ -44,12 +44,10 @@ const MenuProps = {
 };
 
 const names = [
-  'Speech Analytics',
-  'Threat Detection',
-  'SQL Server',
-  'IoT Device Monitoring',
-  'Active Directory Service',
-  'Video Provider'
+  'Personal speech assistant',
+  'Website',
+  'IoT network',
+  'Personal file Sharing'
 ];
 
 function getStyles(name, personName, theme) {
