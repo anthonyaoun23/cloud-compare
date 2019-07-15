@@ -17,8 +17,8 @@ const useStyles = makeStyles(theme => ({
   },
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 300,
-    maxWidth: 300,
+    minWidth: 400,
+    maxWidth: 400,
   },
   chips: {
     display: 'flex',
@@ -44,16 +44,16 @@ const MenuProps = {
 };
 
 const names = [
-  'Oliver Hansen',
-  'Van Henry',
-  'April Tucker',
-  'Ralph Hubbard',
-  'Omar Alexander',
-  'Carlos Abbott',
-  'Miriam Wagner',
-  'Bradley Wilkerson',
-  'Virginia Andrews',
-  'Kelly Snyder',
+  'AI and Machine Learning',
+  'Data warehouse',
+  'Big data processing',
+  'Data orchestration / ETL',
+  'Analytics and visualization',
+  'Virtual servers',
+  'Containers and container orchestrators',
+  'Database',
+  'DevOps and application monitoring',
+  'Management',
 ];
 
 function getStyles(name, personName, theme) {
