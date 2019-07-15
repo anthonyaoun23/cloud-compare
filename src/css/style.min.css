@@ -3,9 +3,11 @@
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+  position: relative;
+  min-height: 100%;
 }
 body {
-  margin: 0;
+  margin: 0 0 100px;
 }
 h1 {
   font-size: 2em;
@@ -1126,6 +1128,14 @@ select::-ms-expand {
   background-color: #fff;
   padding: 36pt 0;
 }
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+}
 .footer__inner {
   -js-display: flex;
   display: -webkit-box;
@@ -1572,7 +1582,6 @@ select::-ms-expand {
     align-content: center;
     justify-content: center;
     text-align: center;
-
   }
 
   .app_page_title {
@@ -1593,7 +1602,6 @@ select::-ms-expand {
     padding: 30px;
     font-size: 2em;
     margin-bottom: 30px;
-
   }
 
   .app_page_li_inner {
@@ -1607,9 +1615,7 @@ select::-ms-expand {
   .app_page_li_inner_inner {
     display: flex;
     flex-direction: column;
-
   }
-
 
   /*Cedric's styling for app page ends here*/
 }
