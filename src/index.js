@@ -9,6 +9,8 @@ import Page404 from "./pages/Page404";
 import Footer from './components/Footer'
 import "./css/style.min.css";
 import "./index.css";
+import ProviderPage from "./pages/ProviderPage";
+
 
 const Navigation = () => (
   <div>
@@ -32,7 +34,7 @@ const Navigation = () => (
               </li>
               <li>
                 <a>
-                  <Link to="/blog">Blog</Link>
+                  <Link to="/ProviderPage">Blog</Link>
                 </a>
               </li>
               <li>
@@ -69,6 +71,7 @@ const Navigation = () => (
     </div>
 
     <Switch>
+      <Route exact path="/ProviderPage" component={ProviderPage} />
       <Route exact path="/" component={Index} />
       <Route path="/app" component={App} />
       <Route path="/blog" component={Blog} />

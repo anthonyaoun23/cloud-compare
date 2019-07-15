@@ -44,8 +44,12 @@ const MenuProps = {
 };
 
 const names = [
-  'Personal Website',
-  'Database'
+  'Speech Analytics',
+  'Threat Detection',
+  'SQL Server',
+  'IoT Device Monitoring',
+  'Active Directory Service',
+  'Video Provider'
 ];
 
 function getStyles(name, personName, theme) {

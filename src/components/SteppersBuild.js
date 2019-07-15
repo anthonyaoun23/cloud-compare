@@ -9,7 +9,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import StepConnector from "@material-ui/core/StepConnector";
 import ListProjects from './ListProjects';
-import TableKhang from './TableKhang';
+import TableBuild from './TableBuild';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -46,7 +46,7 @@ function getStepContent(step) {
     case 0:
       return <div style={{marginLeft: "15px"}}><Typography>{"What kind of projects are you looking to build?"}</Typography><ListProjects/></div>;
     case 1:
-      return <div style={{marginLeft: "15px"}}><Typography>{"Here is what you will need!"}</Typography><TableKhang/></div>;
+      return <div style={{marginLeft: "15px"}}><Typography>{"Here is what you will need!"}</Typography><TableBuild/></div>;
     default:
       return <Typography>{"Wow we didn't expect that step! :) Please Refresh"}</Typography>;
   }
