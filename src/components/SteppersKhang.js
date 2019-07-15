@@ -26,15 +26,15 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(3)
   },
   icon: {
-    height: "60px",
-    width: "60px"
+      transform: 'scale(2)',
   },
   stepText: {
+    marginLeft: "15px",
     fontSize: "32px"
   },
   stepConnector: {
     line: { marginLeft: "16px" }
-  }
+  },
 }));
 
 function getSteps() {
@@ -44,9 +44,9 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <div><Typography>{"Which service(s) would you like to bring to the cloud?"}</Typography><ListService/></div>;
+      return <div style={{marginLeft: "15px"}}><Typography>{"Which service(s) would you like to bring to the cloud?"}</Typography><ListService/></div>;
     case 1:
-      return <div><Typography>{"These are the main providers of your picked cloud services"}</Typography><TableKhang/></div>;
+      return <div style={{marginLeft: "15px"}}><Typography>{"These are the main providers of your picked cloud services"}</Typography><TableKhang/></div>;
     default:
       return <Typography>{"Wow we didn't expect that step! :) Please Refresh"}</Typography>;
   }
@@ -101,7 +101,7 @@ export default function SteppersKhang() {
               <StepContent>
                 {getStepContent(index)}
                 <div className={classes.actionsContainer}>
-                  <div>
+                  <div style={{marginLeft: "15px"}}>
                     <Button
                       disabled={activeStep === 0}
                       onClick={handleBack}

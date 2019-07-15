@@ -24,11 +24,11 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(3)
   },
   icon: {
-    height: "60px",
-    width: "60px"
+    transform: 'scale(2)',
   },
   stepText: {
-    fontSize: "32px"
+    fontSize: "32px",
+    marginLeft: "15px",
   },
   stepConnector: {
     line: { marginLeft: "16px" }
@@ -104,7 +104,7 @@ export default function Steppers() {
                 {label}
               </StepLabel>
               <StepContent>
-                <Typography>{getStepContent(index)}</Typography>
+                <Typography style={{marginLeft: "15px"}}>{getStepContent(index)}</Typography>
                 <div className={classes.actionsContainer}>
                   <div>
                     <Button
