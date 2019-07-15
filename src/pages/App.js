@@ -4,6 +4,7 @@ import looking_learn from '../images/undraw_i_can_fly_7egl (1).svg'
 import looking_build from '../images/undraw_To_the_stars_qhyy.svg'
 import looking_migrate from '../images/undraw_server_q2pb.svg'
 import Migrate from './Migrate';
+import Learn from './Learn';
 
 // Navigation for inner app pages
 const App = ({ match }) => (
@@ -12,7 +13,7 @@ const App = ({ match }) => (
     <Route
       exact
       path={`${match.path}/learn`}
-      render={() => <div> Select a service you'd like to compare </div>}
+      component={Learn}
     />
     <Route
       path={`${match.path}/build`}
@@ -51,7 +52,7 @@ const AppPage = ({ match }) => (
               <Link className= "button button__accent" to={`${match.url}/build`}>Start Here</Link>
             </div>
           </div>
-          
+
         </li>
         <li class="app_page_li">
           <div class="app_page_li_inner">
