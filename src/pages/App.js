@@ -6,7 +6,6 @@ import looking_migrate from '../images/undraw_server_q2pb.svg'
 import Migrate from './Migrate';
 import Learn from './Learn';
 import Build from "./Build";
-
 // Navigation for inner app pages
 const App = ({ match }) => (
   <div>

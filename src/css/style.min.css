@@ -1618,4 +1618,14 @@ footer {
   }
 
   /*Cedric's styling for app page ends here*/
+
+ /*Provider page styling*/
+
+ .provider_page_title {
+  text-align: left;
+  margin-left: 20px;
+  font-size: 2.2em;
+  margin-top: 2em;
+
+ }
 }

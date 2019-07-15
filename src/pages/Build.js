@@ -1,8 +1,19 @@
 import React from "react";
-
+import { Route, Link, BrowserRouter as Router } from "react-router-dom";
 import SteppersBuild from "../components/SteppersBuild";
 
-class Build extends React.Component {
+const Build = () => (
+    <div>
+        <Route exact path="/app/build" component={BuildPage} />
+  </div>
+)
+
+const gotoProvider = (path) => {
+
+}
+
+
+class BuildPage extends React.Component {
   state = {};
 
   render() {
