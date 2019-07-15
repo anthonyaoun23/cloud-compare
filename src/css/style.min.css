@@ -3,10 +3,19 @@
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+  position: relative;
 }
-body {
+html,
+body, #root {
   margin: 0;
+
+  padding: 0;
+
+  min-width: 100vw;
+
+  min-height: 100vh;
 }
+
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -650,7 +659,7 @@ select::-ms-expand {
   transition: 0.7s;
 }
 .navbar--nofixed {
-  position: relative;
+  position: fixed;
   z-index: 3;
 }
 .navbar__inner {
@@ -740,6 +749,7 @@ select::-ms-expand {
 }
 .navbar--extended {
   background-color: transparent;
+  position: absolute;
 }
 .navbar--extended .navbar__inner {
   height: 100px;
@@ -1122,9 +1132,24 @@ select::-ms-expand {
 .cta__sub--center {
   text-align: center;
 }
+
+.bodyContainer {
+  min-width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  
+}
+
 .footer {
-  background-color: #fff;
-  padding: 36pt 0;
+  width: 100vw;
+  bottom:0;
+  padding: 32px;
+}
+
+footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
 }
 .footer__inner {
   -js-display: flex;
@@ -1572,7 +1597,6 @@ select::-ms-expand {
     align-content: center;
     justify-content: center;
     text-align: center;
-
   }
 
   .app_page_title {
@@ -1593,7 +1617,6 @@ select::-ms-expand {
     padding: 30px;
     font-size: 2em;
     margin-bottom: 30px;
-
   }
 
   .app_page_li_inner {
@@ -1607,9 +1630,7 @@ select::-ms-expand {
   .app_page_li_inner_inner {
     display: flex;
     flex-direction: column;
-
   }
-
 
   /*Cedric's styling for app page ends here*/
 
@@ -1649,4 +1670,12 @@ select::-ms-expand {
    margin: 0;
    background-color: #f7f7f7;
  }
+  /*Provider page styling*/
+
+  .provider_page_title {
+    text-align: left;
+    margin-left: 20px;
+    font-size: 2.2em;
+    margin-top: 2em;
+  }
 }
