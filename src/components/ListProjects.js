@@ -82,7 +82,7 @@ export default function ListProjects() {
   return (
     <div className={classes.root}>
       <FormControl className={classes.formControl}>
-        <InputLabel htmlFor="select-multiple-chip">Services</InputLabel>
+        <InputLabel htmlFor="select-multiple-chip">Templates</InputLabel>
         <Select
           multiple
           value={personName}
