@@ -9,7 +9,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import StepConnector from "@material-ui/core/StepConnector";
 import ListService from './ListService';
-import TableKhang from './TableKhang';
+import TableBuild from './TableBuild';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -46,7 +46,7 @@ function getStepContent(step) {
     case 0:
       return <div style={{marginLeft: "15px"}}><Typography>{"Which service(s) would you like to bring to the cloud?"}</Typography><ListService/></div>;
     case 1:
-      return <div style={{marginLeft: "15px"}}><Typography>{"These are the main providers of your picked cloud services"}</Typography><TableKhang/></div>;
+      return <div style={{marginLeft: "15px"}}><Typography>{"These are the main providers of your picked cloud services"}</Typography><TableBuild/></div>;
     default:
       return <Typography>{"Wow we didn't expect that step! :) Please Refresh"}</Typography>;
   }

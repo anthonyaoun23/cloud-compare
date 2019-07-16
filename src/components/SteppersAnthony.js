@@ -9,7 +9,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import StepConnector from "@material-ui/core/StepConnector";
 import ListService from "./ListService";
-import TableKhang from "./TableKhang";
+import TableBuild from "./TableBuild";
 import CheckboxesGroup from "../components/SelectorsAnthony";
 
 const useStyles = makeStyles(theme => ({
@@ -72,7 +72,7 @@ function getStepContent(step) {
           <Typography>
             {"These are the main providers of your picked cloud services"}
           </Typography>
-          <TableKhang />
+          <TableBuild />
         </div>
       );
     default:
