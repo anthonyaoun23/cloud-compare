@@ -16,79 +16,47 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function CheckboxesGroup() {
+export default function CheckboxesGroup(props) {
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    gilad: false,
-    jason: false,
-    antoine: false,
-    sps: false,
-    as: false,
-    sds: false
-  });
+  // const [state, setState] = React.useState({
+  //   gilad: false,
+  //   jason: false,
+  //   antoine: false,
+  //   sps: false,
+  //   as: false,
+  //   sds: false
+  // });
 
-  const handleChange = name => event => {
-    setState({ ...state, [name]: event.target.checked });
-  };
+  // const handleChange = name => event => {
+  //   setState({ ...state, [name]: event.target.checked });
+  // };
 
-  const { gilad, jason, antoine, sps, as, sds } = state;
-  const error = [gilad, jason, antoine, , sps, as, sds].filter(v => v).length !== 2;
+  // const { gilad, jason, antoine, sps, as, sds } = props;
+  // const error =
+  //   [gilad, jason, antoine, , sps, as, sds].filter(v => v).length !== 2;
 
+  const { options, updateSelections, selectionError } = props;
   return (
     <div className={classes.root}>
-      <FormControl component="fieldset" className={classes.formControl}>
-        <FormLabel component="legend">Server Assets</FormLabel>
+      <FormControl error={selectionError} component="fieldset" className={classes.formControl}>
+        <FormLabel component="legend">{selectionError ? ' Please select server asset(s)' : 'Server Assets' }</FormLabel>
         <FormGroup>
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={gilad}
-                onChange={handleChange("gilad")}
-                value="gilad"
+          {Object.keys(options).map(option => {
+            return (
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={options[option]}
+                    onChange={()=>{
+                      updateSelections(option);
+                    }}
+                    value={options[option]}
+                  />
+                }
+                label={option}
               />
-            }
-            label="Servers"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={jason}
-                onChange={handleChange("jason")}
-                value="jason"
-              />
-            }
-            label="Virtual Desktop Server"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={sps}
-                onChange={handleChange("sps")}
-                value="sps"
-              />
-            }
-            label="Software Platform Server"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={as}
-                onChange={handleChange("as")}
-                value="as"
-              />
-            }
-            label="Applications Server"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={sds}
-                onChange={handleChange("sds")}
-                value="sds"
-              />
-            }
-            label="Storage/ Data Server"
-          />
+            );
+          })}
         </FormGroup>
         {/* <FormHelperText>Be careful</FormHelperText> */}
       </FormControl>
