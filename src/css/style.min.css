@@ -1626,6 +1626,7 @@ footer {
     /* margin-top: 40px; */
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
 
   .app_page_li_inner_inner {
