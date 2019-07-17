@@ -26,9 +26,25 @@ function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
 
+const links = {
+  "AWS Speech Analytics" : "https://aws.amazon.com/solutions/ai-powered-speech-analytics-for-amazon-connect/?trk=sl_card",
+  "Azure Speech Services" : "https://azure.microsoft.com/en-ca/services/cognitive-services/speech-services/",
+  "Google Cloud Speech to Text" : "https://cloud.google.com/speech-to-text/",
+  "AWS Fraud Detection" : "https://aws.amazon.com/solutions/fraud-detection-using-machine-learning/",
+  "Azure Advanced Threat Detection" : "https://azure.microsoft.com/en-ca/features/azure-advanced-threat-protection/",
+  "" : "https://cloud.google.com/event-threat-detection/"
+}
+
 const rows = [
-  createData('Speech Analytics', <Link data-tip data-for='global' className= "button button__accent" to={`/AWS/SpeechAnalytics`}><b>AWS Speech Analytics</b></Link>, <Link className= "button button__accent" to={`/AWS/SpeechAnalytics`}><b>Azure Speech Services</b></Link>, <Link className= "button button__accent" to={`/AWS/SpeechAnalytics`}><b>Google Cloud Speech to Text</b></Link>),
-  createData('Threat Detection', <Link className= "button button__accent" to={`/AWS/SpeechAnalytics`}><b>AWS Fraud Detection</b></Link>, <Link className= "button button__accent" to={`/AWS/SpeechAnalytics`}><b>Azure Advanced Threat Detection</b></Link>, <Link className= "button button__accent" to={`/AWS/SpeechAnalytics`}><b>Google Cloud Event Threat Detection</b></Link>),
+  createData('Speech Analytics', 
+  <button className= "button button__accent" data-tip data-for='global' onClick={(event) => {window.open(links["AWS Speech Analytics"], "_blank")}}><b>AWS Speech Analytics</b></button>,
+   <button className= "button button__accent" onClick={(event) => {window.open(links["Azure Speech Services"], "_blank")}}><b>Azure Speech Services</b></button>, 
+   <button className= "button button__accent" onClick={(event) => {window.open(links["Google Cloud Speech to Text"], "_blank")}}><b>Google Cloud Speech to Text</b></button>),
+  
+  
+  createData('Threat Detection', <button className= "button button__accent" onClick={(event) => {window.open(links["AWS Fraud Detection"], "_blank")}}><b>AWS Fraud Detection</b></button>, 
+  <Link className= "button button__accent" onClick={(event) => {window.open(links["Azure Advanced Threat Detection"], "_blank")}}><b>Azure Advanced Threat Detection</b></Link>, 
+  <Link className= "button button__accent" onClick={(event) => {window.open(links["Google Cloud Event Threat Detection"], "_blank")}}><b>Google Cloud Event Threat Detection</b></Link>),
 //   createData('Big data processing', 262, 16.0, 24),
 //   createData('Analytics and visualization', 305, 3.7, 67),
 //   createData('Database', 356, 16.0, 49),
