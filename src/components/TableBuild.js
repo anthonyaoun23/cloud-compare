@@ -51,7 +51,7 @@ const rows = [
 ];
 
 
-const ColoredLine = ({ color }) => (
+const ColoredLine = () => (
     <hr
         style={{
             color: 'black',

@@ -44,7 +44,7 @@ const Navigation = () => (
                 </li>
                 <li>
                   <a>
-                    <Link to="/ProviderPage">Blog</Link>
+                    <Link to="/ProviderPage">Providers</Link>
                   </a>
                 </li>
                 <li>
