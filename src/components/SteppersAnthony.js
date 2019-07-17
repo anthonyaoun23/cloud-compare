@@ -9,7 +9,8 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import StepConnector from "@material-ui/core/StepConnector";
 import ListService from "./ListService";
-import TableKhang from "./TableKhang";
+import TableBuild from "./TableBuild";
+import TableAssets from "./TableAssets";
 import CheckboxesGroup from "../components/SelectorsAnthony";
 
 const useStyles = makeStyles(theme => ({
@@ -27,15 +28,15 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(3)
   },
   icon: {
-    height: "60px",
-    width: "60px"
+      transform: 'scale(2)',
   },
   stepText: {
+    marginLeft: "15px",
     fontSize: "32px"
   },
   stepConnector: {
     line: { marginLeft: "16px" }
-  }
+  },
 }));
 
 function getSteps() {
@@ -70,9 +71,13 @@ function getStepContent(step) {
       return (
         <div>
           <Typography>
-            {"These are the main providers of your picked cloud services"}
+            These are the main providers of your picked <strong>cloud server assets</strong>
           </Typography>
-          <TableKhang />
+          <TableAssets />
+          <Typography style={{marginTop: '48px'}}>
+            These are the main providers of your picked <strong>cloud services</strong>
+          </Typography>
+          <TableBuild />
         </div>
       );
     default:

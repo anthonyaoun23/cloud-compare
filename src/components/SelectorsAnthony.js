@@ -32,7 +32,7 @@ export default function CheckboxesGroup() {
   };
 
   const { gilad, jason, antoine, sps, as, sds } = state;
-  const error = [gilad, jason, antoine].filter(v => v).length !== 2;
+  const error = [gilad, jason, antoine, , sps, as, sds].filter(v => v).length !== 2;
 
   return (
     <div className={classes.root}>

@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function getSteps() {
-  return ["Select service type(s)", "Compare service providers"];
+  return ["Select project template", "Compare service providers"];
 }
 
 function getStepContent(step) {
