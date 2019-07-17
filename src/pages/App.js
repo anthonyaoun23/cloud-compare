@@ -24,7 +24,7 @@ const AppPage = ({ match }) => (
     </div>
     <ul class="app_page_ul">
       <li class="app_page_li">
-        <div class="app_page_li_inner">
+        <div class="app_page_li_inner" style={{marginTop: '60px', marginBottom: '60px'}}>
           <img
             src={looking_learn}
             height="7%"
@@ -46,7 +46,7 @@ const AppPage = ({ match }) => (
         </div>
       </li>
       <li style={{ backgroundColor: "#f7f7f7"}} class="app_page_li">
-        <div class="app_page_li_inner" style={{marginTop: '30px'}}>
+        <div class="app_page_li_inner" style={{marginTop: '80px', marginBottom: '80px'}}>
           <img
             src={looking_build}
             height="7%"
@@ -68,7 +68,7 @@ const AppPage = ({ match }) => (
         </div>
       </li>
       <li class="app_page_li">
-        <div class="app_page_li_inner" style={{marginTop: '30px'}}>
+        <div class="app_page_li_inner" style={{marginTop: '80px', marginBottom: '80px'}}>
           <img
             src={looking_migrate}
             height="7%"
