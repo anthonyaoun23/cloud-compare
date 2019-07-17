@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { withStyles } from "@material-ui/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
@@ -14,12 +14,45 @@ import TableBuild from "./TableBuild";
 import TableAssets from "./TableAssets";
 import CheckboxesGroup from "../components/SelectorsAnthony";
 
+const styles = theme => ({
+  root: {
+    width: "80%"
+  },
+  button: {
+    marginTop: theme.spacing(1),
+    marginRight: theme.spacing(1)
+  },
+  actionsContainer: {
+    marginBottom: theme.spacing(2)
+  },
+  resetContainer: {
+    padding: theme.spacing(3)
+  },
+  icon: {
+    transform: "scale(2)"
+  },
+  stepText: {
+    marginLeft: "15px",
+    fontSize: "32px"
+  },
+  stepConnector: {
+    line: { marginLeft: "16px" }
+  }
+});
 
 class SteppersAnthony extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeStep: 0
+      activeStep: 0,
+      options: {
+        "Servers": false,
+        "Virtual Desktop Servers": false,
+        "Software Platform Server": false,
+        "Applications Server": false,
+        "Storage/Data Server": false
+      },
+      selectionError: false,
     };
   }
 
@@ -31,7 +64,14 @@ class SteppersAnthony extends React.Component {
     ];
   };
 
+  updateSelections = (name) => {
+    let { options } = this.state;
+    const newValue = !options[name];
+    this.setState({ options : {...options, [name]: newValue} });
+  };
+
   getStepContent = step => {
+    const { options, selectionError } = this.state;
     switch (step) {
       case 0:
         return (
@@ -39,7 +79,11 @@ class SteppersAnthony extends React.Component {
             <Typography>
               {"Which server asset(s) would you like to bring to the cloud?"}
             </Typography>
-            <CheckboxesGroup />
+            <CheckboxesGroup
+              options={options}
+              selectionError={selectionError}
+              updateSelections={this.updateSelections}
+            />
           </div>
         );
       case 1:
@@ -76,7 +120,12 @@ class SteppersAnthony extends React.Component {
   };
 
   handleNext = () => {
-    this.setState(prevState => ({ activeStep: prevState.activeStep + 1 }));
+    const { options } = this.state;
+    let next = false;
+    Object.keys(options).map(option =>{
+      if(options[option]) next = true;
+    })
+    next ? this.setState(prevState => ({ activeStep: prevState.activeStep + 1, selectionError: false })) : this.setState({selectionError: true});
   };
 
   handleBack = () => {
@@ -91,32 +140,7 @@ class SteppersAnthony extends React.Component {
     const { activeStep } = this.state;
     let steps = this.getSteps();
 
-    // const { classes } = this.props;
-    const classes = makeStyles(theme => ({
-      root: {
-        width: "80%"
-      },
-      button: {
-        marginTop: theme.spacing(1),
-        marginRight: theme.spacing(1)
-      },
-      actionsContainer: {
-        marginBottom: theme.spacing(2)
-      },
-      resetContainer: {
-        padding: theme.spacing(3)
-      },
-      icon: {
-        transform: "scale(2)"
-      },
-      stepText: {
-        marginLeft: "15px",
-        fontSize: "32px"
-      },
-      stepConnector: {
-        line: { marginLeft: "16px" }
-      }
-    }));
+    const { classes } = this.props;
 
     const stepIconClass = {
       classes: {
@@ -189,4 +213,4 @@ class SteppersAnthony extends React.Component {
   }
 }
 
-export default SteppersAnthony;
+export default withStyles(styles)(SteppersAnthony);
