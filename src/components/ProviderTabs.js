@@ -34,15 +34,15 @@ const AntTab = withStyles(theme => ({
       '"Segoe UI Symbol"',
     ].join(','),
     '&:hover': {
-      color: '#40a9ff',
+      color: '#6c63ff',
       opacity: 1,
     },
     '&$selected': {
-      color: '#1890ff',
+      color: '#6c63ff',
       fontWeight: theme.typography.fontWeightMedium,
     },
     '&:focus': {
-      color: '#40a9ff',
+      color: '#6c63ff',
     },
   },
   selected: {},
@@ -63,10 +63,22 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Fraud = () => (
+const AWS = () => (
     <div class="provider_service_content_container">
-        <h1>Fraud Tab</h1>
+        <h1>AWS</h1>
     </div>
+)
+
+const Azure = () => (
+  <div class="provider_service_content_container">
+      <h1>Azure</h1>
+  </div>
+)
+
+const GCS = () => (
+  <div class="provider_service_content_container">
+      <h1>GCS</h1>
+  </div>
 )
 
 export default function ProviderTabs() {
@@ -82,15 +94,16 @@ export default function ProviderTabs() {
     <div className={classes.root}>
       <div className={classes.demo1}>
         <AntTabs value={value} onChange={handleChange}>
-          <AntTab label="AWS Fraud Detection" />
-          <AntTab label="AWS Speech Analysis" />
+          <AntTab label="AWS" />
+          <AntTab label="Azure" />
+          <AntTab label="Google Cloud" />
         </AntTabs>
         <Typography className={classes.typography} />
       </div>
     </div>
-    {value === 0 && <Fraud />}
-        {value === 1 && <h1>Page Two</h1>}
-        {value === 2 && <h1>Page Three</h1>}
+    {value === 0 && <AWS />}
+        {value === 1 && <Azure />}
+        {value === 2 && <GCS />}
     </div>
   );
 }

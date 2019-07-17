@@ -9,11 +9,11 @@ import ProviderTabs from "../components/ProviderTabs"
 
 // Actual content for page
 const ProviderPage = ({ match }) => (
-    <div class="app_page_container">
+    <div class="provider_page_container">
       <div class="provider_page_title">
-        <h1>Amazon AWS</h1>
+        <h1>Cloud Providers</h1>
       </div>
-      <ProviderTabs provider="Amazon AWS"/>
+      <ProviderTabs/>
   </div>
 );
 
