@@ -12,7 +12,15 @@ import "./index.css";
 import ProviderPage from "./pages/ProviderPage";
 
 const Navigation = () => (
-  <div className="bodyContainer" style={{display: 'flex', flexDirection: 'column', alignItems: 'stretch', justifyContent: 'space-between'}}>
+  <div
+    className="bodyContainer"
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "stretch",
+      justifyContent: "space-between"
+    }}
+  >
     <div>
       <div class="navbar navbar--extended">
         <nav class="nav__mobile" />
@@ -72,17 +80,17 @@ const Navigation = () => (
         </div>
       </div>
 
-      <Switch>
-        <Route exact path="/ProviderPage" component={ProviderPage} />
-        <Route exact path="/" component={Index} />
-        <Route path="/app" component={App} />
-        <Route path="/blog" component={Blog} />
-        <Route path="/contact" component={Contact} />
-        <Route component={Page404} />
-      </Switch>
+        <Switch>
+          <Route exact path="/ProviderPage" component={ProviderPage} />
+          <Route exact path="/" component={Index} />
+          <Route path="/app" component={App} />
+          <Route path="/blog" component={Blog} />
+          <Route path="/contact" component={Contact} />
+          <Route component={Page404} />
+        </Switch>
     </div>
 
-    <Footer style={{alignSelf: 'flex-end'}} />
+    <Footer style={{ alignSelf: "flex-end" }} />
   </div>
 );
 
