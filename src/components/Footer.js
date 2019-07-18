@@ -20,23 +20,23 @@ const Footer = () => (
           </div>
           <div class="footer__data__item" style={{fontSize: '1.25em'}}>
             <div class="footer__row">
-              <Link to="/" href="https://undraw.co" target="_blank" class="footer__link">
+              <Link to="/" href="https://undraw.co" class="footer__link">
                 Home
               </Link>
             </div>
             <div class="footer__row">
-              <Link to="/app" href="https://undraw.co" target="_blank" class="footer__link">
+              <Link to="/app" href="https://undraw.co" class="footer__link">
                 App
               </Link>
             </div>
             <div class="footer__row">
-              <Link to="/blog" href="https://undraw.co" target="_blank" class="footer__link">
-                Blog
+              <Link to="/blog" href="https://undraw.co" class="footer__link">
+                Providers
               </Link>
             </div>
             <div class="footer__row">
-              <Link to="/contact" href="https://undraw.co" target="_blank" class="footer__link">
-                Contact
+              <Link to="/contact" href="https://undraw.co" class="footer__link">
+                Consultation
               </Link>
             </div>
 
