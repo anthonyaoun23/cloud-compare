@@ -17,7 +17,7 @@ selectText(){
 
 onClickButton1 = () => {
   this.setState({
-    text: this.selectText(),
+    text: this.selectText()
   });
 }
 

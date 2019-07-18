@@ -57,7 +57,7 @@ export default function ConsultationTextBox() {
         variant="outlined"
       />
       <TextField
-        id="outlined-required"
+        id="outlined-textarea"
         label="Body"
         helperText="required*"
         multiline
