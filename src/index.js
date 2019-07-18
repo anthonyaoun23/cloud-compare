@@ -49,7 +49,7 @@ const Navigation = () => (
                 </li>
                 <li>
                   <a>
-                    <Link to="/contact">Contact</Link>
+                    <Link to="/contact">Consultation</Link>
                   </a>
                 </li>
               </ul>
