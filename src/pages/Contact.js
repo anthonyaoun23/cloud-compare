@@ -24,6 +24,8 @@ onClickButton1 = () => {
   render() {
     return (
       <div>
+      <br/>
+      <h1>Found a bug or have a specific need? Contact us and we will help</h1>
       <ConsultationTextBox/>
       <p>{this.state.text}</p>
       <button className="button button__accent" onClick={this.onClickButton1}>Send </button>
