@@ -31,6 +31,7 @@ export default function ConsultationTextBox() {
         required
         id="outlined-required"
         label="Name"
+        helperText="required*"
         className={classes.textField}
         margin="normal"
         variant="outlined"
@@ -39,6 +40,7 @@ export default function ConsultationTextBox() {
         required
         id="outlined-required2"
         label="Email"
+        helperText="required*"
         className={classes.textField}
         margin="normal"
         variant="outlined"
@@ -46,6 +48,7 @@ export default function ConsultationTextBox() {
       <TextField
         id="outlined-email-input"
         label="Company name"
+        helperText="optional"
         className={classes.textField}
         type="email"
         name="email"
@@ -54,11 +57,11 @@ export default function ConsultationTextBox() {
         variant="outlined"
       />
       <TextField
-        id="outlined-textarea"
+        id="outlined-required"
         label="Body"
+        helperText="required*"
         multiline
         style={{ margin: 10 }}
-        placeholder="Placeholder"
         fullWidth
         margin="none"
         variant="outlined"
