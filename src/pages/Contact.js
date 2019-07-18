@@ -23,7 +23,7 @@ onClickButton1 = () => {
 
   render() {
     return (
-      <div style={{textAlign: 'center', height: '100%'}}>
+      <div style={{textAlign: 'center', marginTop: '4em', height: '100%'}}>
       <br/>
       <h1>Found a bug or have a specific need? Contact us and we will help</h1>
       <ConsultationTextBox/>
