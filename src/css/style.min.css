@@ -415,17 +415,17 @@ input[type="url"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: 1px solid #eee;
+  /* border: 1px solid #eee; */
   width: 100%;
   -webkit-transition: 0.7s;
   transition: 0.7s;
   color: #111;
   font-family: Lato, sans-serif;
   font-weight: 400;
-  padding: 10pt 20pt;
-  border-radius: 30px;
+  /* padding: 10pt 20pt; */
+  border-radius: 0px;
   background-color: #f7f7f7;
-  margin-bottom: 1.4em;
+  /* margin-bottom: 1.4em; */
   display: block;
 }
 input[type="email"]:focus,
@@ -443,7 +443,7 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: 1px solid #eee;
+  /* border: 1px solid #eee; */
   width: 100%;
   -webkit-transition: 0.7s;
   transition: 0.7s;
@@ -451,7 +451,7 @@ textarea {
   font-family: Lato, sans-serif;
   font-weight: 400;
   padding: 12pt 24pt;
-  border-radius: 30px;
+  border-radius: 0px;
   background-color: #f7f7f7;
   margin-bottom: 1.4em;
   display: block;
