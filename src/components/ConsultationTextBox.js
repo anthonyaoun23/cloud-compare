@@ -26,51 +26,69 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function ConsultationTextBox() {
+export default function ConsultationTextBox(props) {
   const classes = useStyles();
 
   return (
-    <div style={{display: 'flex', justifyContent: 'center'}}>
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <form className={classes.container} noValidate autoComplete="off">
-       <div style={{display: 'flex', width: '100%', justifyContent: 'space-between'}}>
-       <TextField
-       style={{width: '30%'}}
-          required
-          id="outlined-required"
-          label="Name"
-          helperText="required*"
-          className={classes.textField}
-          margin="normal"
-          variant="outlined"
-        />
-        <TextField
-       style={{width: '30%'}}
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-between"
+          }}
+        >
+          <TextField
+            style={{ width: "30%" }}
+            required
+            onChange={props.handleChange}
+            name="name"
+            value={props.name}
 
-          required
-          id="outlined-required2"
-          label="Email"
-          helperText="required*"
-          className={classes.textField}
-          margin="normal"
-          variant="outlined"
-        />
-        <TextField
-       style={{width: '30%'}}
+            id="outlined-required"
+            label="Name"
+            helperText="required*"
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            style={{ width: "30%" }}
+            required
+            onChange={props.handleChange}
+            name="email"
+            id="outlined-required2"
+            label="Email"
+            value={props.email}
+            helperText="required*"
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            style={{ width: "30%" }}
+            id="outlined-e
+            onChange={props.handleChange}mail-input"
+            label="Company name"
+            name="company"
+            value={props.company}
 
-          id="outlined-email-input"
-          label="Company name"
-          helperText="optional"
-          className={classes.textField}
-          type="email"
-          name="email"
-          autoComplete="email"
-          margin="normal"
-          variant="outlined"
-        />
-       </div>
+            onChange={props.handleChange}
+            helperText="optional"
+            className={classes.textField}
+            type="email"
+            autoComplete="email"
+            margin="normal"
+            variant="outlined"
+          />
+        </div>
         <TextField
           id="outlined-textarea"
           label="Body"
+          name="body"
+          value={props.body}
+          onChange={props.handleChange}
           helperText="required*"
           multiline
           style={{ margin: 10 }}
