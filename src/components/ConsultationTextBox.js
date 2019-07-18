@@ -69,7 +69,7 @@ export default function ConsultationTextBox() {
         />
        </div>
         <TextField
-          id="outlined-required"
+          id="outlined-textarea"
           label="Body"
           helperText="required*"
           multiline
