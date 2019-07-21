@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 
+
+//styles for the consultation boxes on the consulati screen
 const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
@@ -22,9 +24,11 @@ const useStyles = makeStyles(theme => ({
  },
 }));
 
+//this function returns the boxes
 export default function ConsultationTextBox() {
   const classes = useStyles();
 
+//return the boxes
   return (
     <form className={classes.container} noValidate autoComplete="off">
     <TextField

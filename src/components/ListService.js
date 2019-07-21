@@ -10,6 +10,7 @@ import Select from '@material-ui/core/Select';
 import Checkbox from '@material-ui/core/Checkbox';
 import Chip from '@material-ui/core/Chip';
 
+//styles for the drop down list for services
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -43,6 +44,8 @@ const MenuProps = {
   },
 };
 
+
+//names of the services that will be present in the list
 const names = [
   'AI and Machine Learning',
   'Data warehouse',
@@ -56,6 +59,7 @@ const names = [
   'Management',
 ];
 
+//this function returns the styles of a certain service
 function getStyles(name, personName, theme) {
   return {
     fontWeight:
@@ -65,15 +69,18 @@ function getStyles(name, personName, theme) {
   };
 }
 
+this fucntion returns the list
 export default function ListService() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
 
+//selects a service
   function handleChange(event) {
     setPersonName(event.target.value);
   }
 
+//do this if theres more than 1 service being picked
   function handleChangeMultiple(event) {
     const { options } = event.target;
     const value = [];
@@ -85,6 +92,7 @@ export default function ListService() {
     setPersonName(value);
   }
 
+//return the drop down list
   return (
     <div className={classes.root}>
       <FormControl className={classes.formControl}>
