@@ -1,12 +1,14 @@
 import React from 'react';
 import ConsultationTextBox from '../components/ConsultationTextBox';
 
+//ceci est le consultation page
+
 class Contact extends React.Component {
   state = {
   text: '',
 }
 
-
+//fonction qui decide quelle message a fair apparaitre
 selectText(){
   if(document.getElementById('outlined-required').value == "" || document.getElementById('outlined-required2').value.includes("@") == false || document.getElementById('outlined-textarea').value == ""){
     return <font color="red">Please make sure to include your name, a valid email address and the body. Thank you!</font>
@@ -18,12 +20,13 @@ selectText(){
   }
 }
 
+//fonction qui est appeller lorsque le bouton est paisser
 onClickButton1 = () => {
   this.setState({
     text: this.selectText()
   });
 }
-
+//render la page
   render() {
     return (
       <div>

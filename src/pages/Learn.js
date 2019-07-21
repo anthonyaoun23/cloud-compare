@@ -2,9 +2,11 @@ import React from "react";
 
 import SteppersKhang from "../components/SteppersKhang";
 
+//learn page
+
 class Learn extends React.Component {
   state = {};
-
+//renders the page
   render() {
     return (
       <div>

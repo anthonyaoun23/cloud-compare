@@ -11,6 +11,7 @@ import { Button } from '@material-ui/core';
 import ProviderPage from '../pages/ProviderPage';
 import ReactTooltip from 'react-tooltip';
 
+//styles du tableau
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
@@ -22,10 +23,12 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+//function qui return le data (sa simplify le code)
+function createData(name, button1, button2, button3, button4) {
+  return { name, button1, button2, button3, button4 };
 }
 
+//les links associer au service du provider
 const links = {
   "AWS Speech Analytics" : "https://aws.amazon.com/solutions/ai-powered-speech-analytics-for-amazon-connect/?trk=sl_card",
   "Azure Speech Services" : "https://azure.microsoft.com/en-ca/services/cognitive-services/speech-services/",
@@ -35,22 +38,23 @@ const links = {
   "" : "https://cloud.google.com/event-threat-detection/"
 }
 
+//création des rangers
 const rows = [
-  createData('Speech Analytics', 
+  createData('Speech Analytics',
   <button className= "button button__accent" data-tip data-for='global' onClick={(event) => {window.open(links["AWS Speech Analytics"], "_blank")}}><b>AWS Speech Analytics</b></button>,
-   <button className= "button button__accent" onClick={(event) => {window.open(links["Azure Speech Services"], "_blank")}}><b>Azure Speech Services</b></button>, 
+   <button className= "button button__accent" onClick={(event) => {window.open(links["Azure Speech Services"], "_blank")}}><b>Azure Speech Services</b></button>,
    <button className= "button button__accent" onClick={(event) => {window.open(links["Google Cloud Speech to Text"], "_blank")}}><b>Google Cloud Speech to Text</b></button>),
-  
-  
-  createData('Threat Detection', <button className= "button button__accent" onClick={(event) => {window.open(links["AWS Fraud Detection"], "_blank")}}><b>AWS Fraud Detection</b></button>, 
-  <Link className= "button button__accent" onClick={(event) => {window.open(links["Azure Advanced Threat Detection"], "_blank")}}><b>Azure Advanced Threat Detection</b></Link>, 
+
+
+  createData('Threat Detection', <button className= "button button__accent" onClick={(event) => {window.open(links["AWS Fraud Detection"], "_blank")}}><b>AWS Fraud Detection</b></button>,
+  <Link className= "button button__accent" onClick={(event) => {window.open(links["Azure Advanced Threat Detection"], "_blank")}}><b>Azure Advanced Threat Detection</b></Link>,
   <Link className= "button button__accent" onClick={(event) => {window.open(links["Google Cloud Event Threat Detection"], "_blank")}}><b>Google Cloud Event Threat Detection</b></Link>),
 //   createData('Big data processing', 262, 16.0, 24),
 //   createData('Analytics and visualization', 305, 3.7, 67),
 //   createData('Database', 356, 16.0, 49),
 ];
 
-
+//styling
 const ColoredLine = () => (
     <hr
         style={{
@@ -62,7 +66,7 @@ const ColoredLine = () => (
 );
 
 
-
+//function qui créer le tableau
 export default function TableBuild() {
   const classes = useStyles();
 
@@ -80,7 +84,7 @@ export default function TableBuild() {
     <h3 className='toolTip_title'>Learning Difficulty</h3>
     </div>
     <p className='toolTip_title'>Medium</p>
-    
+
    </ReactTooltip>
       <Table className={classes.table}>
         <TableHead>
