@@ -37,22 +37,32 @@ const rows = [
     >
       <b>Amazon Elastic Compute Cloud</b>
     </Link>,
-    <Link className="button button__accent" to={`/AWS/SpeechAnalytics`}>
+    <Link 
+    data-tip data-for='global'
+    className="button button__accent" to={`/AWS/SpeechAnalytics`}>
       <b>Azure Virtual Machines</b>
     </Link>,
-    <Link className="button button__accent" to={`/AWS/SpeechAnalytics`}>
+    <Link 
+    data-tip data-for='global'
+    className="button button__accent" to={`/AWS/SpeechAnalytics`}>
       <b>Compute Engine</b>
     </Link>
   ),
   createData(
     "PaaS",
-    <Link className="button button__accent" to={`/AWS/SpeechAnalytics`}>
+    <Link 
+    data-tip data-for='global'
+    className="button button__accent" to={`/AWS/SpeechAnalytics`}>
       <b>AWS Elastic Beanstalk</b>
     </Link>,
-    <Link className="button button__accent" to={`/AWS/SpeechAnalytics`}>
+    <Link 
+    data-tip data-for='global'
+    className="button button__accent" to={`/AWS/SpeechAnalytics`}>
       <b>App Service</b>
     </Link>,
-    <Link className="button button__accent" to={`/AWS/SpeechAnalytics`}>
+    <Link 
+    data-tip data-for='global'
+    className="button button__accent" to={`/AWS/SpeechAnalytics`}>
       <b>App Engine</b>
     </Link>
   )
@@ -76,19 +86,19 @@ export default function TableAssets() {
 
   return (
     <Paper className={classes.root}>
-      <ReactTooltip className="tooltip" id="global">
-        <h1 className="toolTip_main_title">AWS Speech Analytics</h1>
-        <ColoredLine />
-        <div className="toolTip_title_div">
-          <h3 className="toolTip_title">Pricing</h3>
-        </div>
-        <p className="toolTip_title">0.3$/hr</p>
+                  <ReactTooltip className='tooltip' effect="solid" id='global'>
+    <h1 className="toolTip_main_title">AWS Speech Analytics</h1>
+    <ColoredLine />
+    <div className="toolTip_title_div">
+    <h3 className='toolTip_title'>Pricing</h3>
+    </div>
+    <p className='toolTip_title'>0.3$/hr</p>
 
-        <div className="toolTip_title_div">
-          <h3 className="toolTip_title">Learning Difficulty</h3>
-        </div>
-        <p className="toolTip_title">Medium</p>
-      </ReactTooltip>
+    <div className="toolTip_title_div">
+    <h3 className='toolTip_title'>Learning Difficulty</h3>
+    </div>
+    <p className='toolTip_title'>Medium</p>
+    </ReactTooltip>
       <Table className={classes.table}>
         <TableHead>
           <TableRow>

@@ -9,7 +9,8 @@ import Checkbox from "@material-ui/core/Checkbox";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    display: "flex"
+    display: "flex",
+    justifyItems: 'center'
   },
   formControl: {
     margin: theme.spacing(3)
@@ -38,8 +39,14 @@ export default function CheckboxesGroup(props) {
   const { options, updateSelections, selectionError } = props;
   return (
     <div className={classes.root}>
-      <FormControl error={selectionError} component="fieldset" className={classes.formControl}>
-        <FormLabel component="legend">{selectionError ? ' Please select server asset(s)' : 'Server Assets' }</FormLabel>
+      <FormControl
+        error={selectionError}
+        component="fieldset"
+        className={classes.formControl}
+      >
+        <FormLabel component="legend">
+          {selectionError ? " Please select server asset(s)" : "Server Assets"}
+        </FormLabel>
         <FormGroup>
           {Object.keys(options).map(option => {
             return (
@@ -47,7 +54,7 @@ export default function CheckboxesGroup(props) {
                 control={
                   <Checkbox
                     checked={options[option]}
-                    onChange={()=>{
+                    onChange={() => {
                       updateSelections(option);
                     }}
                     value={options[option]}

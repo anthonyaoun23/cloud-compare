@@ -40,6 +40,7 @@ const links = {
 
 //création des rangers
 const rows = [
+<<<<<<< HEAD
   createData('Speech Analytics',
   <button className= "button button__accent" data-tip data-for='global' onClick={(event) => {window.open(links["AWS Speech Analytics"], "_blank")}}><b>AWS Speech Analytics</b></button>,
    <button className= "button button__accent" onClick={(event) => {window.open(links["Azure Speech Services"], "_blank")}}><b>Azure Speech Services</b></button>,
@@ -49,6 +50,17 @@ const rows = [
   createData('Threat Detection', <button className= "button button__accent" onClick={(event) => {window.open(links["AWS Fraud Detection"], "_blank")}}><b>AWS Fraud Detection</b></button>,
   <Link className= "button button__accent" onClick={(event) => {window.open(links["Azure Advanced Threat Detection"], "_blank")}}><b>Azure Advanced Threat Detection</b></Link>,
   <Link className= "button button__accent" onClick={(event) => {window.open(links["Google Cloud Event Threat Detection"], "_blank")}}><b>Google Cloud Event Threat Detection</b></Link>),
+=======
+  createData('Speech Analytics', 
+  <button className= "button button__accent" data-tip data-for='global' onClick={() => {window.open(links["AWS Speech Analytics"], "_blank")}}><b>AWS Speech Analytics</b></button>,
+   <button className= "button button__accent" data-tip data-for='global' onClick={() => {window.open(links["Azure Speech Services"], "_blank")}}><b>Azure Speech Services</b></button>, 
+   <button className= "button button__accent" data-tip data-for='global' onClick={() => {window.open(links["Google Cloud Speech to Text"], "_blank")}}><b>Google Cloud Speech to Text</b></button>),
+  
+  
+  createData('Threat Detection', <button className= "button button__accent" data-tip data-for='global'onClick={() => {window.open(links["AWS Fraud Detection"], "_blank")}}><b>AWS Fraud Detection</b></button>, 
+  <Link className= "button button__accent" data-tip data-for='global' onClick={() => {window.open(links["Azure Advanced Threat Detection"], "_blank")}}><b>Azure Advanced Threat Detection</b></Link>, 
+  <Link className= "button button__accent" data-tip data-for='global' onClick={() => {window.open(links["Google Cloud Event Threat Detection"], "_blank")}}><b>Google Cloud Event Threat Detection</b></Link>),
+>>>>>>> e1efc32d38d5fa93b40c609ef58e0f2639290098
 //   createData('Big data processing', 262, 16.0, 24),
 //   createData('Analytics and visualization', 305, 3.7, 67),
 //   createData('Database', 356, 16.0, 49),
@@ -72,7 +84,7 @@ export default function TableBuild() {
 
   return (
     <Paper className={classes.root}>
-            <ReactTooltip className='tooltip' id='global'>
+            <ReactTooltip className='tooltip' effect="solid" id='global'>
     <h1 className="toolTip_main_title">AWS Speech Analytics</h1>
     <ColoredLine />
     <div className="toolTip_title_div">

@@ -9,7 +9,7 @@ import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import StepConnector from "@material-ui/core/StepConnector";
-import ListService from "./ListService";
+import { ListServices } from "./ListService";
 import TableBuild from "./TableBuild";
 import TableAssets from "./TableAssets";
 import CheckboxesGroup from "../components/SelectorsAnthony";
@@ -46,13 +46,26 @@ class SteppersAnthony extends React.Component {
     this.state = {
       activeStep: 0,
       options: {
-        "Servers": false,
+        Servers: false,
         "Virtual Desktop Servers": false,
         "Software Platform Server": false,
         "Applications Server": false,
         "Storage/Data Server": false
       },
       selectionError: false,
+      list: {
+        "AI and Machine Learning": false,
+        "Data warehouse": false,
+        "Big data processing": false,
+        "Data orchestration / ETL": false,
+        "Analytics and visualization": false,
+        "Virtual servers": false,
+        "Containers and container orchestrators": false,
+        Database: false,
+        "DevOps and application monitoring": false,
+        Management: false
+      },
+      listError: false
     };
   }
 
@@ -64,14 +77,33 @@ class SteppersAnthony extends React.Component {
     ];
   };
 
-  updateSelections = (name) => {
+  updateSelections = name => {
     let { options } = this.state;
     const newValue = !options[name];
-    this.setState({ options : {...options, [name]: newValue} });
+    this.setState({ options: { ...options, [name]: newValue } });
+  };
+
+  updateList = values => {
+    let { list } = this.state;
+
+    Object.keys(list).map(item => {
+      list[item] = false;
+    });
+
+    values.map(item => {
+      if (!list[item]) {
+        list[item] = true;
+      }
+    });
+
+    this.setState({ list }, () => {
+      const { list } = this.state;
+      console.log(list);
+    });
   };
 
   getStepContent = step => {
-    const { options, selectionError } = this.state;
+    const { options, selectionError, list, listError } = this.state;
     switch (step) {
       case 0:
         return (
@@ -92,7 +124,11 @@ class SteppersAnthony extends React.Component {
             <Typography>
               {"Which service(s) would you like to bring to the cloud?"}
             </Typography>
-            <ListService />
+            <ListServices
+              list={list}
+              listError={listError}
+              updateList={this.updateList}
+            />
           </div>
         );
       case 2:
@@ -120,12 +156,32 @@ class SteppersAnthony extends React.Component {
   };
 
   handleNext = () => {
-    const { options } = this.state;
+    const { options, list } = this.state;
     let next = false;
-    Object.keys(options).map(option =>{
-      if(options[option]) next = true;
-    })
-    next ? this.setState(prevState => ({ activeStep: prevState.activeStep + 1, selectionError: false })) : this.setState({selectionError: true});
+    const { activeStep } = this.state;
+    if (activeStep === 0) {
+      Object.keys(options).map(option => {
+        if (options[option]) next = true;
+      });
+      next
+        ? this.setState(prevState => ({
+            activeStep: prevState.activeStep + 1,
+            selectionError: false
+          }))
+        : this.setState({ selectionError: true });
+    } else if (activeStep === 1) {
+      Object.keys(list).map(option => {
+        if (list[option]) next = true;
+      });
+      next
+        ? this.setState(prevState => ({
+            activeStep: prevState.activeStep + 1,
+            listError: false
+          }))
+        : this.setState({ listError: true });
+    } else {
+      this.setState(prevState => ({ activeStep: prevState.activeStep + 1 }));
+    }
   };
 
   handleBack = () => {
@@ -133,7 +189,30 @@ class SteppersAnthony extends React.Component {
   };
 
   handleReset = () => {
-    this.setState({ activeStep: 0 });
+    this.setState({
+      activeStep: 0,
+      options: {
+        Servers: false,
+        "Virtual Desktop Servers": false,
+        "Software Platform Server": false,
+        "Applications Server": false,
+        "Storage/Data Server": false
+      },
+      selectionError: false,
+      list: {
+        "AI and Machine Learning": false,
+        "Data warehouse": false,
+        "Big data processing": false,
+        "Data orchestration / ETL": false,
+        "Analytics and visualization": false,
+        "Virtual servers": false,
+        "Containers and container orchestrators": false,
+        Database: false,
+        "DevOps and application monitoring": false,
+        Management: false
+      },
+      listError: false
+    });
   };
 
   render() {
