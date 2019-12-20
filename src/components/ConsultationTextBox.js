@@ -4,7 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
 
-
 //styles for the consultation boxes on the consulati screen
 const useStyles = makeStyles(theme => ({
   container: {
@@ -28,60 +27,11 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-<<<<<<< HEAD
-//this function returns the boxes
-export default function ConsultationTextBox() {
-=======
 export default function ConsultationTextBox(props) {
->>>>>>> e1efc32d38d5fa93b40c609ef58e0f2639290098
   const classes = useStyles();
 
-//return the boxes
+  //return the boxes
   return (
-<<<<<<< HEAD
-    <form className={classes.container} noValidate autoComplete="off">
-    <TextField
-        required
-        id="outlined-required"
-        label="Name"
-        helperText="required*"
-        className={classes.textField}
-        margin="normal"
-        variant="outlined"
-      />
-    <TextField
-        required
-        id="outlined-required2"
-        label="Email"
-        helperText="required*"
-        className={classes.textField}
-        margin="normal"
-        variant="outlined"
-      />
-      <TextField
-        id="outlined-email-input"
-        label="Company name"
-        helperText="optional"
-        className={classes.textField}
-        type="email"
-        name="email"
-        autoComplete="email"
-        margin="normal"
-        variant="outlined"
-      />
-      <TextField
-        id="outlined-textarea"
-        label="Body"
-        helperText="required*"
-        multiline
-        style={{ margin: 10 }}
-        fullWidth
-        margin="none"
-        variant="outlined"
-        InputLabelProps={{
-          classes: {
-              input: classes.resize,
-=======
     <div style={{ display: "flex", justifyContent: "center" }}>
       <form className={classes.container} noValidate autoComplete="off">
         <div
@@ -97,7 +47,6 @@ export default function ConsultationTextBox(props) {
             onChange={props.handleChange}
             name="name"
             value={props.name}
-
             id="outlined-required"
             label="Name"
             helperText="required*"
@@ -125,7 +74,6 @@ export default function ConsultationTextBox(props) {
             label="Company name"
             name="company"
             value={props.company}
-
             onChange={props.handleChange}
             helperText="optional"
             className={classes.textField}
@@ -150,7 +98,6 @@ export default function ConsultationTextBox(props) {
           InputLabelProps={{
             classes: {
               input: classes.resize
->>>>>>> e1efc32d38d5fa93b40c609ef58e0f2639290098
             },
             shrink: true
           }}

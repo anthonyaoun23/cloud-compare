@@ -45,7 +45,6 @@ const MenuProps = {
   }
 };
 
-
 //names of the services that will be present in the list
 const names = [
   "AI and Machine Learning",
@@ -70,9 +69,6 @@ function getStyles(name, personName, theme) {
   };
 }
 
-<<<<<<< HEAD
-this fucntion returns the list
-=======
 export function ListSelection(props) {
   const classes = useStyles();
   const { list, listError, updateList } = props;
@@ -186,18 +182,17 @@ export function ListSelect(props) {
   );
 }
 
->>>>>>> e1efc32d38d5fa93b40c609ef58e0f2639290098
 export default function ListService() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
 
-//selects a service
+  //selects a service
   function handleChange(event) {
     setPersonName(event.target.value);
   }
 
-//do this if theres more than 1 service being picked
+  //do this if theres more than 1 service being picked
   function handleChangeMultiple(event) {
     const { options } = event.target;
     const value = [];
@@ -209,7 +204,7 @@ export default function ListService() {
     setPersonName(value);
   }
 
-//return the drop down list
+  //return the drop down list
   return (
     <div className={classes.root}>
       <FormControl className={classes.formControl}>
@@ -229,7 +224,11 @@ export default function ListService() {
           MenuProps={MenuProps}
         >
           {names.map(name => (
-            <MenuItem key={name} value={name} style={getStyles(name, personName, theme)}>
+            <MenuItem
+              key={name}
+              value={name}
+              style={getStyles(name, personName, theme)}
+            >
               {name}
             </MenuItem>
           ))}
